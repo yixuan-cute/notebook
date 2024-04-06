@@ -1,4 +1,4 @@
-# 1 Basic 
+# 1 Some Basic Things
 
 ## 1.1 Introductory Terms and Concepts
 
@@ -22,6 +22,12 @@
 
 ![the_linux_filesystem](./images/the_linux_filesystem.png)
 
+&emsp;&emsp;The root (/) of the filesystem is at the top of the tree, and the following are the most important subdirectories to know:
+
+* `/root`: The home directory of the all-powerful root user
+* `/etc`: Generally contains the Linux configuration files—files that control when and how programs start up
+* `/home`: The user’s home directory
+
 ## 1.3 Basic Commands in Linux
 
 # 2 Text Manipulation
@@ -33,3 +39,14 @@
 ### Finding the Tail
 
 ### Numbering the Lines
+
+# 3 Analyzing and Managing Networks
+
+# 4 
+
+# 4 Managing Users and Groups
+
+# 4 Controlling File and Directory Permissions
+
+# 5 
+
