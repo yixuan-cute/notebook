@@ -72,9 +72,9 @@
 ```html
 <head>
     <!-- the author of the page -->
-    <meta name="author" content="Dave Gray"/>  
-    
-    <!-- the decvription of the page -->
+    <meta name="author" content="Dave Gray"/>
+
+    <!-- the description of the page -->
     <meta name="description" content="This page contains all the things I am learning how to create as I learn HTML."/>
 </head>
 ```
@@ -94,7 +94,7 @@
 <head>
     <!-- link to a CSS file -->
     <link rel="stylesheet" href="./css/main.css" type="text/css" />
-    
+
     <!-- link to a JavaScript file -->
     <link rel="" href="./js/main.js" type="text/javascript" />
 </head>

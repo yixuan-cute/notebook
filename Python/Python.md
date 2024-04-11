@@ -20,7 +20,7 @@ alias py='python3'
 
 ## 1.2 REPL
 
-&emsp;&emsp;Run the command `py` and we see the three arrows. This is the pyhton REPL.
+&emsp;&emsp;Run the command `py` and we will see the three arrows. This is the pyhton REPL.
 
 ```
 Python 3.11.2 (main, Mar 13 2023, 12:18:29) [GCC 12.2.0] on linux
@@ -45,9 +45,5 @@ print(greeting)
 
 ## 2 Python Basics
 
-
-
-
-
-
+### 2.1 
 

@@ -4,14 +4,14 @@
 
 ## 1.1 Sample code
 
-`index.html`:
+### `index.html`:
 
 ```html
 <html>
     <head>
         <title>Hello CSS</title>
-        <link rel="stylesheet" href="./css/style.css"/><!-- this is our link to the external stylesheet -->
-        <style><!-- internal stylesheet  -->
+        <link rel="stylesheet" href="./css/style.css"/>  <!-- this is our link to the external stylesheet -->
+        <style>  <!-- internal stylesheet  -->
             p {
                 color: limegreen;
                 /*
@@ -25,14 +25,14 @@
         <p>
 I'm learning CSS!
         </p>
-        <p style="color: blue"><!-- the color of this p element will be set to blue, because the stylesheet is applied directly to the element itself  -->
+        <p style="color: blue">  <!-- the color of this p element will be set to blue, because the stylesheet is applied directly to the element itself  -->
 I'm learning CSS again!
         </p>
     </body>
 </html>
 ```
 
-`css/style.css`:
+### `css/style.css`:
 
 ```css
 /*
