@@ -1,146 +1,59 @@
-# 1 Getting Started
+# 1 HTML First Steps
 
-## 1.1 What is HTML?
+## 1.1 Getting started with HTML
 
-&emsp;&emsp;HTML is an acronym that stands for Hypertext Markup Language. And HTML is the most basic building block of the web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation(CSS) or functionality/behavior(JavaScript).
+### 1.1.1 What is HTML?
 
-&emsp;&emsp;"Hypertext" refers to links that connect web pages to one another, either within a single website or between websites.
+&emsp;&emsp;HTML (HyperText Markup Language) is a markup language that tells web browsers how to structure the web pages we visit.
 
-&emsp;&emsp;Overall, HTML uses "markup" to annotate text, images, and other content for display in a Web browser.
+&emsp;&emsp;HTML consists of a series of elements, which we use to enclose, wrap, or mark up different parts of content to make it appear or act in a certain way. The enclosing tags can make content into a hyperlink to connect to another page, italicize words, and so on.
 
-## 1.2 The first html file
-
-```html
-<html>  <!-- every page starts and end with html opening and closing tags -->
-        <!-- everything else on the page goes between those tages -->
-
-    <head>  <!-- contains data and is not seen on the page -->
-            <!-- this is considered to be metadata about the page -->
-
-        <title>The Title of the Page</title>
-    </head>
-
-    <body>  <!-- the part of the page that everybody sees in the broswer -->
-
-        <h1>Hello, World!</h1>
-    </body>
-
-</html>
-```
-
-## 1.3 Check errors and warnings
-
-&emsp;&emsp;Click <a href="https://validator.w3.org/" target="_blank">Validator</a>, and upload the file.
-
-## 1.4 Add a `lang` attribute
+&emsp;&emsp;If we wanted a text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph `<p>` element:
 
 ```html
-<html lang="en">
-    ......
-</html>
+<p>My cat is very grumpy</p>
 ```
 
-&emsp;&emsp;We might have other language to put here and we can find a list of those at MDN network.
+> Note: Tags in HTML are not case-sensitive. This means they can be written in uppercase or lowercase. For example, a `<title>` tag could be written as `<title>`, `<TITLE>`, `<Title>`, `<TiTlE>`, etc., and it will work. However, **it is best practice to write all tags in lowercase for consistency and readability**.
 
-## 1.5 Declare the character encoding
+### 1.1.2 Anatomy of an HTML element
 
-```html
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        ......
-    </head>
-    ......
-</html>
-```
+&emsp;&emsp;The element is the opening tag, followed by content, followed by the closing tag.
 
-## 1.6 Document type declaration
+![html_element](./images/html_element.png)
 
-```html
-<!DOCTYPE html>  <!-- this declaration should be on the very first line of the page -->
-                <!-- this is not really an HTML element or tag -->
-<html>
-    ......
-</html>
-```
+The anatomy of our element is:
 
-# 2 Head Element
+* The **opening tag**: Marks where the element begins or starts to take effect.
+* The **content**: The content of the element.
+* The **closing tag**: Marks where the element ends.
 
-&emsp;&emsp;Everything inside head element is not seen on the web page.
+#### Nesting elements
 
-## 2.1 `meta` element
+#### Void elements
 
-```html
-<head>
-    <!-- the author of the page -->
-    <meta name="author" content="Dave Gray"/>
+### 1.1.3 Attributes
 
-    <!-- the description of the page -->
-    <meta name="description" content="This page contains all the things I am learning how to create as I learn HTML."/>
-</head>
-```
+Elements can also have attributes. Attributes look like this:
 
-## 2.2 `link` element
+![html_attribute](./images/html_attribute.png)
 
-```html
-<head>
-    <!-- set a little favicon beside the title -->
-    <link rel="icon" href="./assets/html.ico" type="image/x-icon"/>
-</head>
-```
+&emsp;&emsp;Attributes contain extra information about the element that won't appear in the content. In this example, the class attribute is an identifying name used to target the element with style information.
 
-&emsp;&emsp;Using `link` element, we would link to CSS files and even JavaScript files and other resources that we pull in from the web.
+An attribute should have:
 
-```html
-<head>
-    <!-- link to a CSS file -->
-    <link rel="stylesheet" href="./css/main.css" type="text/css" />
+* A space between it and the element name. (For an element with more than one attribute, the attributes should be separated by spaces too.)
+* The attribute name, followed by an equal sign.
+* An attribute value, wrapped with opening and closing quote marks.
 
-    <!-- link to a JavaScript file -->
-    <link rel="" href="./js/main.js" type="text/javascript" />
-</head>
-```
+### 1.1.4 Entity references: Including special characters in HTML
 
-## 2.3 `style` element
 
-```html
-<head>
-    <style>
-    html {
-        font-size: 22px;
-    }
-    body {
-        background-color: #333;
-        color: whitesmoke;
-    }
-    </style>
-</head>
-```
 
-## 2.4 `script` element
+# 2 Multimedia and Embedding
 
-```html
-<head>
-    <script type="text/javascript">
+# 3 HTML Tables
 
-    </script>
-</head>
-```
+# 4 Web Forms
 
-# 3 Text Basics
-
-## 3.1
-
-# 4 List Types
-
-# 5 Add Links
-
-# 6 Add Images
-
-# 7 Semantic Tags
-
-# 8 Create Tables
-
-# 9 Forms & Inputs
-
-# 10 HTML Project
+# 5 MathML
