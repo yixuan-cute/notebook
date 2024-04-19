@@ -6,14 +6,13 @@
 
 ```c
 #include <stdio.h>
-int main()
+main() 
 {
     printf("hello, world\n");
-    return 0;
 }
 ```
 
-2. Compile it with the follow command:
+2. Compile it with the following command:
 
 ```bash
 gcc hello_world.c
@@ -29,15 +28,17 @@ gcc hello_world.c
 
 &emsp;&emsp;A C program, whatever its size, consists of **functions** and **variables**. A function contains statements that specify the computing operations to be done, and variables store values used during the computation.
 
-&emsp;&emsp;Our example is a function named main. Normally we are at liberty to give functions whatever names we like, but "main" is special -- **our program begins executing at the beginning of main**. This means that every program must have a main somewhere. main will usually call other functions to help perform its job, some that we wrote an others from libraries that are provided for us.
+&emsp;&emsp;Our example is a function named main. Normally we are at liberty to give functions whatever names we like, but "main" is special --- **our program begins executing at the beginning of main**. This means that every program must have a main somewhere. main will usually call other functions to help perform its job, some that we wrote, and others from libraries that are provided for us.
 
 &emsp;&emsp;One method of communicating data between functions is for the calling function to provide a list of values, called arguments, to the function it calls. The parentheses after the function name surround the argument list. In this example, main is defined to be a function that expects no arguments, which is indicated by the empty list `()`.
 
 &emsp;&emsp;The first line of the program: `#include <stdio.h>`, tells the compiler to include information about the standard input/output library; this line appears at the beginning of many C source files.
 
+&emsp;&emsp;The statemaents of a function are enclosed in braces `{ }`. The function **main** contains only one statement: `printf("hello, world\n");`. A function is call by naming it, followed by a parenthesized list of arguments, so this calls the function **printf** with the argument `"hello, world\n"`.
+
 &emsp;&emsp;
 
-## 1.3
+## 1.3 
 
 # 2 Types, Operators and Expressions
 

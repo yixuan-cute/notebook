@@ -88,14 +88,21 @@ The Java programming language defines the following kinds of variables:
 The rules and conventions for naming our variables can be summarized as follows:
 
 1. A variable's name can be any legal identifier — an unlimited-length sequence of Unicode letters and digits, beginning with a letter, the dollar sign `$`, or the underscore character `_`.
-    * The convention, however, is to always begin our variable names with a letter, not `$` or `_`. Subsequent characters may be letters, digits, dollar signs, or underscore characters. Additionally, the dollar sign character, by convention, is never used at all.
-    * A similar convention exists for the underscore character; while it's technically legal to begin our variable's name with `_`, this practice is discouraged.
-    * White space is not permitted.
+
+> Note:  
+> &emsp;&emsp;The convention, however, is to always begin our variable names with a letter, not `$` or `_`. Subsequent characters may be letters, digits, dollar signs, or underscore characters. Additionally, the dollar sign character, by convention, is never used at all.  
+> &emsp;&emsp;A similar convention exists for the underscore character; while it's technically legal to begin our variable's name with `_`, this practice is discouraged.  
+> &emsp;&emsp;White space is not permitted.
+
 2. When choosing a name for our variables, use full words instead of cryptic abbreviations. Doing so will make our code easier to read and understand.
-    * The name we choose must not be a keyword or reserved word.
+
+> Note: The name we choose must not be a keyword or reserved word.
+
 3. If the name we choose consists of only one word, spell that word in all lowercase letters. If it consists of more than one word, capitalize the first letter of each subsequent word.
-    * The names gearRatio and currentGear are prime examples of this convention.
-    * If our variable stores a constant value, such as `static final int NUM_GEARS = 6`, the convention changes slightly, capitalizing every letter and separating subsequent words with the underscore character. By convention, **the underscore character is never used elsewhere**.
+
+> Note:  
+> &emsp;&emsp;The names gearRatio and currentGear are prime examples of this convention.  
+> &emsp;&emsp;If our variable stores a constant value, such as `static final int NUM_GEARS = 6`, the convention changes slightly, capitalizing every letter and separating subsequent words with the underscore character. By convention, **the underscore character is never used elsewhere**.
 
 # 3 Creating Primitive Type Variables
 
@@ -109,9 +116,7 @@ int gear = 1;
 
 &emsp;&emsp;A variable's data type determines the values it may contain, plus the operations that may be performed on it.
 
-&emsp;&emsp;In addition to `int`, the Java programming language supports seven other primitive data types. **A primitive type is predefined by the language and is named by a reserved keyword**.
-
-The eight primitive data types supported by the Java programming language are:
+&emsp;&emsp;In addition to `int`, the Java programming language supports seven other primitive data types. **A primitive type is predefined by the language and is named by a reserved keyword**.  The eight primitive data types supported by the Java programming language are:
 
 1. `byte`: An 8-bit signed two's complement integer. ($-128$ ~ $127$)
 2. `short`: A 16-bit signed two's complement integer. ($-32768$ ~ $32767$)
@@ -122,7 +127,7 @@ The eight primitive data types supported by the Java programming language are:
 7. `boolean`: The boolean data type has only two possible values: `true` and `false`.
 8. `char`: A single 16-bit Unicode character. It has a minimum value of `\u0000 (or 0)` and a maximum value of `\uffff (or 65,535 inclusive)`.
 
-&emsp;&emsp;In addition to the eight primitive data types listed above, the Java programming language also provides special support for character strings via the `java.lang.String` class. Enclosing our character string within double quotes will automatically create a new String object; for example:
+&emsp;&emsp;In addition to the eight primitive data types listed above, **the Java programming language also provides special support for character strings via the `java.lang.String` class**. Enclosing our character string within double quotes will automatically create a new String object; for example:
 
 ```java
 String s = "this is a string";
@@ -132,7 +137,8 @@ String s = "this is a string";
 
 &emsp;&emsp;It is not always necessary to assign a value when a field is declared. Fields that are declared but not initialized will be set to a reasonable default by the compiler.
 
-&emsp;&emsp;Generally speaking, this default will be zero or null, depending on the data type. Relying on such default values, however, is generally considered bad programming style.
+> Note:  
+> &emsp;&emsp;Generally speaking, this default will be zero or null, depending on the data type. Relying on such default values, however, is generally considered bad programming style.
 
 &emsp;&emsp;The following table summarizes the default values for the above data types:
 
@@ -149,9 +155,8 @@ String s = "this is a string";
 |        boolean        |            false           |
 
 > Note:  
-> &emsp;&emsp;Local variables are slightly different; **the compiler never assigns a default value to an uninitialized local variable**.
-
-&emsp;&emsp;We must assign a value to an uninitalized local variable before we use it. Accessing an uninitialized local variable will result in a compile-time error.
+> &emsp;&emsp;Local variables are slightly different; **the compiler never assigns a default value to an uninitialized local variable**.  
+> &emsp;&emsp;We must assign a value to an uninitalized local variable before we use it. Accessing an uninitialized local variable will result in a compile-time error.
 
 ## 3.3 Creating Values with Literals
 
@@ -166,9 +171,7 @@ byte b = 100;
 short s = 10000; int i = 100000;
 ```
 
-## 3.4 Literals
-
-### 3.4.1 Integer Literals
+### 3.3.1 Integer Literals
 
 &emsp;&emsp;**An integer literal is of type `long` if it ends with the letter L or l; otherwise it is of type `int`.**
 
@@ -178,7 +181,6 @@ short s = 10000; int i = 100000;
 &emsp;&emsp;Values of the integral types `byte`, `short`, `int`, and `long` can be created from `int` literals. Values of type `long` that exceed the range of `int` can be created from `long` literals.
 
 ```java
-//
 byte byteVar = 100;
 short shortVar = 100;
 
@@ -211,7 +213,7 @@ int hexadecimalValue = 0x1a;
 int binaryValue = 0b11010;
 ```
 
-### 3.4.2 Floating-Point Literals
+### 3.3.2 Floating-Point Literals
 
 &emsp;&emsp;**A floating-point literal is of type `float` if it ends with the letter F or f(32-bit float literal); otherwise its type is `double` and it can optionally end with the letter D or d (64-bit double literal; this is the default and by convention is omitted).**
 
@@ -224,13 +226,52 @@ double d1 = 123.4;
 double d2 = 1.234e2;
 ```
 
-### 3.4.3 Character and String Literals
+### 3.3.3 Character and String Literals
 
-### 3.4.4 Using Underscore Characters in Numeric Literals
+### 3.3.4 Using Underscore Characters in Numeric Literals
 
-## 3.5 Using `var` type indentifier
+## 3.4 Using `var` type indentifier
 
 # 4 Creating Arrays
+
+&emsp;&emsp;The following program, ArrayDemo, creates an array of integers, puts some values in the array, and prints each value to standard output.
+
+```java
+class ArrayDemo {
+    public static void main(String[] args) {
+        // declares an array of integers
+        int[] anArray;
+
+        // allocates memory for 10 integers
+        anArray = new int[10];
+
+        // initialize first element
+        anArray[0] = 100;
+        // initialize second element
+        anArray[1] = 200;
+        // and so forth
+        anArray[2] = 300;
+        anArray[3] = 400;
+        anArray[4] = 500;
+        anArray[5] = 600;
+        anArray[6] = 700;
+        anArray[7] = 800;
+        anArray[8] = 900;
+        anArray[9] = 1000;
+
+        System.out.println("Element at index 0: " + anArray[0]);
+        System.out.println("Element at index 1: " + anArray[1]);
+        System.out.println("Element at index 2: " + anArray[2]);
+        System.out.println("Element at index 3: " + anArray[3]);
+        System.out.println("Element at index 4: " + anArray[4]);
+        System.out.println("Element at index 5: " + anArray[5]);
+        System.out.println("Element at index 6: " + anArray[6]);
+        System.out.println("Element at index 7: " + anArray[7]);
+        System.out.println("Element at index 8: " + anArray[8]);
+        System.out.println("Element at index 9: " + anArray[9]);
+    }
+}
+```
 
 ## 4.1 Declaring a Variable to Refer to an Array
 
@@ -328,7 +369,7 @@ System.out.println(anArray.length);
 
 ## 4.3 Copying Arrays
 
-&emsp;&emsp;The `System` class has an `arraycopy()` method that we can use to efficiently copy data from one array into another:
+&emsp;&emsp;The `System` class has an static `arraycopy()` method that we can use to efficiently copy data from one array into another:
 
 ```java
 public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
@@ -342,6 +383,8 @@ public static void arraycopy(Object src, int srcPos, Object dest, int destPos, i
 &emsp;&emsp;For our convenience, Java SE provides several methods for performing array manipulations (common tasks, such as copying, sorting and searching arrays) in the `java.util.Arrays` class.
 
 # 5 Using Operators
+
+
 
 # 6 Control Flow Statements
 
