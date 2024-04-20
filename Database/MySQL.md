@@ -101,7 +101,7 @@ systemctl enable mysqld.service  # auto-start the service once the system boots
 
 ## 2.1 `SELECT FROM` and `SELECT`
 
-&emsp;&emsp;The SELECT statement allows us to select data from one or more tables. To write a SELECT statement in MySQL, we use this syntax:
+&emsp;&emsp;The **SELECT** statement allows us to select data from one or more tables. To write a SELECT statement in MySQL, we use this syntax:
 
 ```sql
 SELECT select_list
@@ -131,7 +131,8 @@ SELECT 1 + 1;
 SELECT NOW();
 ```
 
-&emsp;&emsp;The `NOW()` function doesn’t have any parameters. To call it, we just place the parentheses `()` after the function name.
+> Note:  
+> &emsp;&emsp;The `NOW()` function doesn’t have any parameters. To call it, we just place the parentheses `()` after the function name.
 
 &emsp;&emsp;If a function has parameters, we need to pass arguments into it. For example, to concatenate multiple strings into a single string, we can use the `CONCAT()` function:
 
@@ -139,7 +140,8 @@ SELECT NOW();
 SELECT CONCAT('John',' ','Doe');
 ```
 
-&emsp;&emsp;The `CONCAT()` function accepts one or more strings and concatenates them into a single string.
+> Note:  
+> &emsp;&emsp;The `CONCAT()` function accepts one or more strings and concatenates them into a single string.
 
 ## 2.2 Column alias
 
@@ -207,6 +209,20 @@ ORDER BY
 ```
 
 ## 2.4 Filtering data
+
+### 2.4.1 WHERE 
+
+&emsp;&emsp;The **WHERE** clause allows us to specify a search condition for the rows returned by a query. The following shows the syntax of the WHERE clause:
+
+```sql
+SELECT select_list
+FROM table_name
+WHERE search_condition;
+```
+
+> Note:  
+> &emsp;&emsp;The search_condition is a combination of one or more expressions using the logical operator `AND`, `OR` and `NOT`.
+
 
 # 3 Managing Databases
 

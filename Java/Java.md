@@ -96,13 +96,13 @@ The rules and conventions for naming our variables can be summarized as follows:
 
 2. When choosing a name for our variables, use full words instead of cryptic abbreviations. Doing so will make our code easier to read and understand.
 
-> Note: The name we choose must not be a keyword or reserved word.
+> Note: The name we choose **must not be a keyword or reserved word**.
 
 3. If the name we choose consists of only one word, spell that word in all lowercase letters. If it consists of more than one word, capitalize the first letter of each subsequent word.
 
 > Note:  
 > &emsp;&emsp;The names gearRatio and currentGear are prime examples of this convention.  
-> &emsp;&emsp;If our variable stores a constant value, such as `static final int NUM_GEARS = 6`, the convention changes slightly, capitalizing every letter and separating subsequent words with the underscore character. By convention, **the underscore character is never used elsewhere**.
+> &emsp;&emsp;If our variable stores a constant value, such as `static final int NUM_GEARS = 6`, the convention changes slightly, capitalizing every letter and separating subsequent words with the underscore character. (By convention, **the underscore character is never used elsewhere**.)
 
 # 3 Creating Primitive Type Variables
 
@@ -302,7 +302,7 @@ float anArrayOfFloats[];
 ```
 
 > Note:  
-> &emsp;&emsp;However, convention discourages this form; the brackets identify the array type and should appear with the type designation.
+> &emsp;&emsp;However, convention discourages this form; the brackets **identify the array type and should appear with the type designation**.
 
 ## 4.2 Creating, Initializing, and Accessing an Array
 
@@ -384,7 +384,279 @@ public static void arraycopy(Object src, int srcPos, Object dest, int destPos, i
 
 # 5 Using Operators
 
+## 5.1 The Simple Assignment Operator
 
+&emsp;&emsp;One of the most common operators that we'll encounter is the simple assignment operator `=`. It assigns the value on its right to the operand on its left:
+
+```java
+int cadence = 0;
+int speed = 0;
+int gear = 1;
+```
+
+> Note: This operator can also be used on objects to assign **object references**.
+
+## 5.2 The Arithmetic Operators
+
+&emsp;&emsp;The Java programming language provides operators that **perform addition, subtraction, multiplication, and division**.
+
+> Note:  
+> &emsp;&emsp;There is a good chance we will recognize them by their counterparts in basic mathematics. The only symbol that might look new to us is `%`, which divides one operand by another and returns the remainder as its result.
+
+```java
+class ArithmeticDemo {
+
+    public static void main (String[] args) {
+
+        int result = 1 + 2;
+        // result is now 3
+        System.out.println("1 + 2 = " + result);
+        int original_result = result;
+
+        result = result - 1;
+        // result is now 2
+        System.out.println(original_result + " - 1 = " + result);
+        original_result = result;
+
+        result = result * 2;
+        // result is now 4
+        System.out.println(original_result + " * 2 = " + result);
+        original_result = result;
+
+        result = result / 2;
+        // result is now 2
+        System.out.println(original_result + " / 2 = " + result);
+        original_result = result;
+
+        result = result + 8;
+        // result is now 10
+        System.out.println(original_result + " + 8 = " + result);
+        original_result = result;
+
+        result = result % 7;
+        // result is now 3
+        System.out.println(original_result + " % 7 = " + result);
+    }
+}
+```
+
+&emsp;&emsp;We can also combine the arithmetic operators with the simple assignment operator to create compound assignments. **For example, `x += 1;` and `x = x + 1;` both increment the value of x by 1.**
+
+&emsp;&emsp;The `+` operator can also be used for **concatenating (joining) two strings together**, as shown in the following ConcatDemo program:
+
+```java
+class ConcatDemo {
+    public static void main(String[] args){
+        String firstString = "This is";
+        String secondString = " a concatenated string.";
+        String thirdString = firstString + secondString;
+        System.out.println(thirdString);  //Output: This is a concatenated string.
+    }
+}
+```
+
+## 5.3 The Unary Operators
+
+&emsp;&emsp;The unary operators require only one operand; they perform various operations such as incrementing (or decrementing) a value by one, negating an expression, or inverting the value of a boolean.
+
+```java
+class UnaryDemo {
+
+    public static void main(String[] args) {
+
+        int result = +1;
+        // result is now 1
+        System.out.println(result);
+
+        result--;
+        // result is now 0
+        System.out.println(result);
+
+        result++;
+        // result is now 1
+        System.out.println(result);
+
+        result = -result;
+        // result is now -1
+        System.out.println(result);
+
+        boolean success = false;
+        // false
+        System.out.println(success);
+        // true
+        System.out.println(!success);
+
+    }
+
+}
+```
+
+&emsp;&emsp;The increment/decrement operators can be applied before (prefix) or after (postfix) the operand. The code `result++;` and `++result;` will both end in result being incremented by one. The only difference is that **the prefix version (++result) evaluates to the incremented value, whereas the postfix version (result++) evaluates to the original value**.
+
+```java
+class PrePostDemo {
+
+    public static void main(String[] args){
+
+        int i = 3;
+        i++;
+        // prints 4
+        System.out.println(i);
+        ++i;               
+        // prints 5
+        System.out.println(i);
+
+        // prints 6
+        System.out.println(++i);
+       
+        // prints 6
+        System.out.println(i++);
+
+        // prints 7
+        System.out.println(i);
+
+    }
+}
+```
+
+## 5.4 The Equality and Relational Operators
+
+&emsp;&emsp;The equality and relational operators determine if one operand is greater than, less than, equal to, or not equal to another operand.
+
+```java
+class ComparisonDemo {
+
+    public static void main(String[] args){
+        int value1 = 1;
+        int value2 = 2;
+        if(value1 == value2)
+            System.out.println("value1 == value2");
+        if(value1 != value2)
+            System.out.println("value1 != value2");
+        if(value1 > value2)
+            System.out.println("value1 > value2");
+        if(value1 < value2)
+            System.out.println("value1 < value2");
+        if(value1 <= value2)
+            System.out.println("value1 <= value2");
+    }
+}
+```
+
+> Note:  
+> &emsp;&emsp;Keep in mind that we must use `==`, not `=`, when testing if two primitive values are equal.
+
+## 5.5 The Conditional Operators
+
+&emsp;&emsp;The `&&` and `||` operators perform Conditional-AND and Conditional-OR operations on two boolean expressions.
+
+```java
+class ConditionalDemo1 {
+
+    public static void main(String[] args){
+        int value1 = 1;
+        int value2 = 2;
+        if ((value1 == 1) && (value2 == 2))
+            System.out.println("value1 is 1 AND value2 is 2");
+        if ((value1 == 1) || (value2 == 1))
+            System.out.println("value1 is 1 OR value2 is 1");
+    }
+}
+```
+
+> Note:  
+> &emsp;&emsp;These operators exhibit "short-circuiting" behavior, which means that the second operand is evaluated only if needed.
+
+## 5.6 The Type Comparison Operator `instanceof`
+
+## 5.7 Bitwise and Bit Shift Operators
 
 # 6 Control Flow Statements
+
+## 6.1 If-Then and If-Then-Else
+
+&emsp;&emsp;The **if-then** statement is the most basic of all the control flow statements. It tells our program to execute a certain section of code only if a particular test evaluates to true.
+
+```java
+void applyBrakes() {
+    // the "if" clause: bicycle must be moving
+    if (isMoving){
+        // the "then" clause: decrease current speed
+        currentSpeed--;
+    }
+}
+```
+
+&emsp;&emsp;If this test evaluates to false (meaning that the bicycle is not in motion), control jumps to the end of the if-then statement.
+
+> Note:  
+> &emsp;&emsp;The opening and closing braces are optional, provided that the "then" clause contains only one statement.
+
+&emsp;&emsp;The **if-then-else** statement provides a secondary path of execution when an "if" clause evaluates to false. 
+
+```java
+class IfElseDemo {
+    public static void main(String[] args) {
+
+        int testscore = 76;
+        char grade;
+
+        if (testscore >= 90) {
+            grade = 'A';
+        } else if (testscore >= 80) {
+            grade = 'B';
+        } else if (testscore >= 70) {
+            grade = 'C';
+        } else if (testscore >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'F';
+        }
+        System.out.println("Grade = " + grade);
+    }
+}
+```
+
+## 6.2 While and Do-while
+
+&emsp;&emsp;The **while** statement continually executes a block of statements while a particular condition is true. Its syntax can be expressed as:
+
+```java
+while (expression) {
+     statement(s)
+}
+```
+
+> Note:  
+> &emsp;&emsp;The while statement evaluates expression, which must return a boolean value. If the expression evaluates to true, the while statement executes the statement(s) in the while block. The while statement continues testing the expression and executing its block until the expression evaluates to false.
+
+&emsp;&emsp;Using the while statement to print the values from 1 through 10 can be accomplished as in the following WhileDemo program:
+
+```java
+class WhileDemo {
+    public static void main(String[] args){
+        int count = 1;
+        while (count < 11) {
+            System.out.println("Count is: " + count);
+            count++;
+        }
+    }
+}
+```
+
+&emsp;&emsp;The Java programming language also provides a **do-while** statement, which can be expressed as follows:
+
+```java
+do {
+     statement(s)
+} while (expression);
+```
+
+&emsp;&emsp;The difference between do-while and while is that do-while evaluates its expression at the bottom of the loop instead of the top. Therefore, the statements within the do block are always executed at least once.
+
+
+
+# 7 
+
+
 
