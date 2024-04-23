@@ -1,6 +1,6 @@
 # 1 Getting Started with MySQL
 
-# 1.1 What is MySQL?
+## 1.1 What is MySQL?
 
 &emsp;&emsp;MySQL is a robust database management system designed for managing relational databases. It is open-source software supported by Oracle, meaning that we can use MySQL without any cost. Additionally, we will have the flexibility to modify its source code to tailor it to our specific requirements.
 
@@ -9,7 +9,7 @@
 > MySQL? What’s in a name?  
 > &emsp;&emsp;MySQL got its name from the daughter of one of its co-founders, Monty Widenius, whose name is My. Combining ‘My’ with ‘SQL,’ we get MySQL.
 
-# 1.2 Installing MySQL on Linux
+## 1.2 Installing MySQL on Linux
 
 1. Click <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">here</a> to download MySQL Community Server.
 
@@ -94,6 +94,8 @@ systemctl enable mysqld.service  # auto-start the service once the system boots
 8. Login and change the password of root.
 
 ```sql
+
+
 
 ```
 
