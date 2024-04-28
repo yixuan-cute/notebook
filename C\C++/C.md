@@ -34,13 +34,15 @@ gcc hello_world.c
 
 &emsp;&emsp;The first line of the program: `#include <stdio.h>`, tells the compiler to include information about the standard input/output library; this line appears at the beginning of many C source files.
 
-&emsp;&emsp;The statemaents of a function are enclosed in braces `{ }`. The function **main** contains only one statement: `printf("hello, world\n");`. A function is call by naming it, followed by a parenthesized list of arguments, so this calls the function **printf** with the argument `"hello, world\n"`.
+&emsp;&emsp;The statements of a function are enclosed in braces `{ }`. The function **main** contains only one statement: `printf("hello, world\n");`. A function is call by naming it, followed by a parenthesized list of arguments, so this calls the function **printf** with the argument `"hello, world\n"`.
 
 &emsp;&emsp;
 
 ## 1.3 
 
 # 2 Types, Operators and Expressions
+
+## 2.1 
 
 # 3 Control Flow
 
