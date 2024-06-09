@@ -49,7 +49,7 @@ if(1)
 }
 ```
 
-&emsp;&emsp;In arithmetic and logical expressions, **bool**s are converted to **int**s; integer arithmetic and logical operations are performed on the converted values. If the result needs to be converted back to **bool**, a **0** is converted to **false** and a nonzero value is converted to **true**. For example:
+&emsp;&emsp;In arithmetic and logical expressions, **bool**s are converted to **int**s; **integer arithmetic and logical operations are performed on the converted values**. For example:
 
 ```cpp
 bool a = true;
@@ -57,6 +57,7 @@ bool b = true;
 bool x = a+b;   // a+b is 2, so x becomes true
 bool y = a||b;  // a||b is 1, so y becomes true ("||" means "or")
 bool z = a−b;   // a-b is 0, so z becomes false
+//The result of each expression above is implicitly converted to bool.
 ```
 
 &emsp;&emsp;A pointer can be implicitly converted to a **bool**. A non-null pointer converts to **true**; pointers with the value **nullptr** convert to **false**. For example:
@@ -76,21 +77,60 @@ void g(int∗ p)
 
 ### 1.1.2 Character Types
 
-&emsp;&emsp;C++ provides a variety of character types that reflect that – often bewildering – variety:
+|Character Types  |  |
+|:---------------:|:-----------------------------------------------------------------------------------------------------:|
+| `char`          |The default character type, which is used for the implementation’s character set and is usually 8 bits.|
+| `signed char`   |Like **char**, but guaranteed to be signed, that is, capable of holding both positive and negative values. |
+| `unsigned char` |Like **char**, but guaranteed to be unsigned.|
 
-&emsp;&emsp;`char`: The default character type, used for program text. A char is used for the implementation’s character set and is usually 8 bits.
-
-`signed char`: Like char, but guaranteed to be signed, that is, capable of holding both positive and negative values.
-* `unsigned char`: Like char, but guaranteed to be unsigned.
-
-* `wchar_t`: Provided to hold characters of a larger character set such as Unicode (see §7.3.2.2). The size of wchar_t is implementation-defined and large enough to hold the largest character set supported by the implementation’s locale (Chapter 39).
-* `char16_t`: A type for holding 16-bit character sets, such as UTF-16.
-* `char32_t`: A type for holding 32-bit character sets, such as UTF-32.
-
+> Notes:  
+> &emsp;&emsp;On each implementation, the **char** type will be identical to that of either **signed char** or **unsigned char**, but these three names are still considered separate types.
 
 1. Signed and Unsigned Characters
 
+&emsp;&emsp;It is implementation-defined whether a plain **char** is considered signed or unsigned. This opens the possibility for some nasty surprises and implementation dependencies. 
+
+```cpp
+char c = 255;  //255 is "all ones", hexadecimal 0xFF
+int i = c;
+```
+
+&emsp;&emsp;What will be the value of **i**? Unfortunately, the answer is undefined.
+
+&emsp;&emsp;On an implementation with 8-bit bytes, the answer depends on the meaning of the "all ones" **char** bit pattern when extended into an **int**.
+
+&emsp;&emsp;On a machine where a **char** is unsigned, the answer is 255. On a machine where a **char** is signed, the answer is **−1**.
+
+> Notes:   
+> &emsp;&emsp;C++ does not offer a general mechanism for detecting this kind of problem. One solution is to avoid plain **char** and use the specific **char** types only. Unfortunately, some standard-library functions, such as `strcmp()`, take plain **chars** only.
+
+&emsp;&emsp;A **char** must behave identically to either a **signed char** or an **unsigned char**. However, the three **char** types are distinct, so we can’t mix pointers to different **char** types. For example:
+
+```cpp
+void f(char c, signed char sc, unsigned char uc)
+{
+    char∗ pc = &uc;  // error: no pointer conversion
+    signed char∗ psc = pc;  // error: no pointer conversion
+    unsigned char∗ puc = pc;  // error: no pointer conversion
+    psc = puc;  // error: no pointer conversion
+}
+```
+
 2. Character Literals
+
+&emsp;&emsp;A character literal is a single character enclosed in single quotes, for example, `'a'` and `'0'`.
+
+
+
+### 1.1.3 Integer Types
+
+### 1.1.4 Floating-point Types
+
+### 1.1.5 **void**
+
+### 1.1.6 Sizes
+
+### 1.1.7 Alignment
 
 ## 1.2 Declarations
 

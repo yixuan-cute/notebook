@@ -91,7 +91,7 @@ The anatomy of our element is:
 &emsp;&emsp;This is permitted in certain circumstances, but it can also break our markup in other circumstances.
 
 ```html
-<!-- pass -->
+<!-- ok -->
 <a href=https://www.mozilla.org/>favorite website</a>
 
 <!-- error -->
@@ -135,9 +135,11 @@ The anatomy of our element is:
 </html>
 ```
 
-* `<!doctype html>`: 
-* `<html></html>`: This element wraps all the content on the page, which is sometimes known as the root element.
-* `<head></head>`: This element acts as a container for everything we want to include on the HTML page, that isn't the content the page will show to viewers.
+> Here we have:  
+> * `<!doctype html>`: The **doctype**. `<!DOCTYPE html>` is the shortest string of characters that counts as a valid doctype.
+> * `<html></html>`: The `<html>` element. This element wraps all the content on the page, which is sometimes known as the root element.
+> * `<head></head>`: The `<head>` element. This element acts as a container for everything we want to include on the HTML page, that isn't the content the page will show to viewers.
+> * `<body></body>`: The `<body>` element. This contains all the content that displays on the page, including text, images, videos, games, playable audio tracks, or whatever else.
 
 ## 1.5 Entity references: Including special characters in HTML
 
@@ -160,10 +162,49 @@ The anatomy of our element is:
 <!-- <p>I am!</p> -->
 ```
 
-# 2 
+# 2 Basic Facilities
+
+## 2.1 What's in the head? Metadata in HTML
+
+&emsp;&emsp;The HTML head is the contents of the `<head>` element whose job is to contain **metadata** about the document.
+
+### 2.1.1 Adding a title
+
+```html
+<head>
+  <title>My test page</title>
+</head>
+```
+
+Open the file in our browser, and we would see something like this:
+
+![html_title_example](./images/html_title_example.png)
 
 
+### 2.1.2 Metadata: the `<meta>` element
 
+1. Specifying our document's character encoding.
+
+```html
+<meta charset="utf-8" />
+```
+
+2. Adding an author and description.
+
+```html
+<meta name="author" content="Chris Mills" />
+<meta
+  name="description"
+  content="The MDN Web Docs Learning Area aims to provide
+complete beginners to the Web with all they need to know to get
+started with developing websites and applications." />
+```
+
+3. Other types of metadata.
+
+### 2.1.3 Adding custom icons to our site
+
+## 2.2 HTML text fundamentals
 
 # 3 Multimedia and embedding
 
