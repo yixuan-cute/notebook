@@ -21,7 +21,7 @@ float f(int);   // f is a function taking an argument of type int and returning 
 
 ### 1.1.1 Booleans
 
-&emsp;&emsp;A Boolean, **bool**, can have one of the two values **true** or **false**, is used to express the result of logical operations. For example:
+&emsp;&emsp;A Boolean, **bool**, can have one of the two values: **true** or **false**, is used to express the result of logical operations. For example:
 
 ```cpp
 void f(int a, int b)
@@ -109,24 +109,67 @@ int i = c;
 ```cpp
 void f(char c, signed char sc, unsigned char uc)
 {
-    char∗ pc = &uc;  // error: no pointer conversion
-    signed char∗ psc = pc;  // error: no pointer conversion
-    unsigned char∗ puc = pc;  // error: no pointer conversion
-    psc = puc;  // error: no pointer conversion
+    char∗ pc = &uc;  //error: no pointer conversion
+    signed char∗ psc = pc;  //error: no pointer conversion
+    unsigned char∗ puc = pc;  //error: no pointer conversion
+    psc = puc;  //error: no pointer conversion
 }
 ```
 
 2. Character Literals
 
-&emsp;&emsp;A character literal is a single character enclosed in single quotes, for example, `'a'` and `'0'`.
+&emsp;&emsp;A character literal is _a single character enclosed in single quotes_, for example, `'a'` and `'0'`.
 
+&emsp;&emsp;The type of a character literal is **char**. A character literal can be implicitly converted to its integer value in the character set of the machine on which the C++ program is to run.
 
+&emsp;&emsp;For example, if we are running on a machine using the ASCII character set, the value of `'0'` is 48.  
+
+> Notes:  
+> &emsp;&emsp;The use of character literals rather than decimal notation makes programs more portable.
+
+&emsp;&emsp;A few characters have standard names that use the backslash, \ , as an escape character:
+
+| Name           | ASCII Name| C++ Name |
+|:--------------:|:----:|:-----:|
+| Newline        |||
+| Horizontal tab |||
 
 ### 1.1.3 Integer Types
 
+&emsp;&emsp;Like char, each integer type comes in three forms: "plain" **int**, **signed int**, and **unsigned int**. In addition, integers come in four sizes: **short int**, "plain" **int**, **long int**, and **long long int**. 
+
+&emsp;&emsp;A **long int** can be referred to as plain **long**, and a **long long int** can be referred to as plain **long long**. Similarly, **short** is a synonym for **short int**, **unsigned** for **unsigned int**, and **signed** for **signed int**.
+
+> Notes:  
+> &emsp;&emsp;Using an **unsigned** instead of an **int** to gain one more bit to represent positive integers **is almost never a good idea**. Attempts to ensure that some values are positive by declaring variables **unsigned** will typically be defeated by the implicit conversion rules
+
+1. Integer Literals
+
+&emsp;&emsp;Integer literals come in three guises: **decimal, octal, and hexadecimal**. 
+
+> Notes:  
+> &emsp;&emsp;Decimal literals are the most commonly used and look as you would expect them to:
+> &emsp;&emsp;
+
+&emsp;&emsp;A literal starting with zero followed by **x** or **X** (**0x** or **0X**) is a hexadecimal (base 16) number. A literal starting with zero but not followed by **x** or **X** is an octal (base 8) number.
+
+
+
+2. Types of Integer Literals
+
+
+
 ### 1.1.4 Floating-point Types
 
-### 1.1.5 **void**
+&emsp;&emsp;The floating-point types represent floating-point numbers. A floating-point number is an approximation of a real number represented in a fixed amount of memory. 
+
+&emsp;&emsp;There are three floating-point types: **float** (single-precision), **double** (double-precision), and **long double** (extended-precision).
+
+
+
+
+
+### 1.1.5 `void`
 
 ### 1.1.6 Sizes
 
