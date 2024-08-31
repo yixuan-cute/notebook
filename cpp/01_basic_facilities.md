@@ -77,62 +77,8 @@ void g(int∗ p)
 
 ### 1.1.2 Character Types
 
-|Character Types  |  |
-|:---------------:|:-----------------------------------------------------------------------------------------------------:|
-| `char`          |The default character type, which is used for the implementation’s character set and is usually 8 bits.|
-| `signed char`   |Like **char**, but guaranteed to be signed, that is, capable of holding both positive and negative values. |
-| `unsigned char` |Like **char**, but guaranteed to be unsigned.|
 
-> Notes:  
-> &emsp;&emsp;On each implementation, the **char** type will be identical to that of either **signed char** or **unsigned char**, but these three names are still considered separate types.
 
-1. Signed and Unsigned Characters
-
-&emsp;&emsp;It is implementation-defined whether a plain **char** is considered signed or unsigned. This opens the possibility for some nasty surprises and implementation dependencies. 
-
-```cpp
-char c = 255;  //255 is "all ones", hexadecimal 0xFF
-int i = c;
-```
-
-&emsp;&emsp;What will be the value of **i**? Unfortunately, the answer is undefined.
-
-&emsp;&emsp;On an implementation with 8-bit bytes, the answer depends on the meaning of the "all ones" **char** bit pattern when extended into an **int**.
-
-&emsp;&emsp;On a machine where a **char** is unsigned, the answer is 255. On a machine where a **char** is signed, the answer is **−1**.
-
-> Notes:   
-> &emsp;&emsp;C++ does not offer a general mechanism for detecting this kind of problem. One solution is to avoid plain **char** and use the specific **char** types only. Unfortunately, some standard-library functions, such as `strcmp()`, take plain **chars** only.
-
-&emsp;&emsp;A **char** must behave identically to either a **signed char** or an **unsigned char**. However, the three **char** types are distinct, so we can’t mix pointers to different **char** types. For example:
-
-```cpp
-void f(char c, signed char sc, unsigned char uc)
-{
-    char∗ pc = &uc;  //error: no pointer conversion
-    signed char∗ psc = pc;  //error: no pointer conversion
-    unsigned char∗ puc = pc;  //error: no pointer conversion
-    psc = puc;  //error: no pointer conversion
-}
-```
-
-2. Character Literals
-
-&emsp;&emsp;A character literal is _a single character enclosed in single quotes_, for example, `'a'` and `'0'`.
-
-&emsp;&emsp;The type of a character literal is **char**. A character literal can be implicitly converted to its integer value in the character set of the machine on which the C++ program is to run.
-
-&emsp;&emsp;For example, if we are running on a machine using the ASCII character set, the value of `'0'` is 48.  
-
-> Notes:  
-> &emsp;&emsp;The use of character literals rather than decimal notation makes programs more portable.
-
-&emsp;&emsp;A few characters have standard names that use the backslash, \ , as an escape character:
-
-| Name           | ASCII Name| C++ Name |
-|:--------------:|:----:|:-----:|
-| Newline        |||
-| Horizontal tab |||
 
 ### 1.1.3 Integer Types
 
@@ -153,8 +99,6 @@ void f(char c, signed char sc, unsigned char uc)
 
 &emsp;&emsp;A literal starting with zero followed by **x** or **X** (**0x** or **0X**) is a hexadecimal (base 16) number. A literal starting with zero but not followed by **x** or **X** is an octal (base 8) number.
 
-
-
 2. Types of Integer Literals
 
 
@@ -164,10 +108,6 @@ void f(char c, signed char sc, unsigned char uc)
 &emsp;&emsp;The floating-point types represent floating-point numbers. A floating-point number is an approximation of a real number represented in a fixed amount of memory. 
 
 &emsp;&emsp;There are three floating-point types: **float** (single-precision), **double** (double-precision), and **long double** (extended-precision).
-
-
-
-
 
 ### 1.1.5 `void`
 
@@ -182,6 +122,10 @@ void f(char c, signed char sc, unsigned char uc)
 ## 1.4 Aliases
 
 # 2 Pointers, Arrays, and References
+
+
+
+
 
 # 3 Structures, Unions, and Enumerations
 
@@ -198,7 +142,4 @@ void f(char c, signed char sc, unsigned char uc)
 # 9 Namespaces
 
 # 10 Source Files and Programs
-
-
-
 
