@@ -101,8 +101,6 @@ void g(int∗ p)
 
 2. Types of Integer Literals
 
-
-
 ### 1.1.4 Floating-point Types
 
 &emsp;&emsp;The floating-point types represent floating-point numbers. A floating-point number is an approximation of a real number represented in a fixed amount of memory. 
@@ -123,10 +121,6 @@ void g(int∗ p)
 
 # 2 Pointers, Arrays, and References
 
-
-
-
-
 # 3 Structures, Unions, and Enumerations
 
 # 4 Statements
@@ -143,3 +137,18 @@ void g(int∗ p)
 
 # 10 Source Files and Programs
 
+# 11 Classes
+
+# 12 Construction, Cleanup, Copy, and Move
+
+# 13 Overloading
+
+# 14 Special Operators
+
+# 15 Derived Classes
+
+# 16 Class Hierarchies
+
+# 17 Run-Time Type Information
+
+# 18 
